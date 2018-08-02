@@ -12,8 +12,8 @@ namespace gclab16readwritenumbersfromtextfile
         static void Main(string[] args)
         {
             CountriesApp countriesApp = new CountriesApp();
-            Console.WriteLine(countriesApp.MenuPrompt());
-            string choiceFromUser = Console.ReadLine();
+
+            countriesApp.ExecuteOrder66();
         }
     }
 }

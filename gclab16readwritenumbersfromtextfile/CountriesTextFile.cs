@@ -8,32 +8,26 @@ using System.Threading.Tasks;
 namespace gclab16readwritenumbersfromtextfile
 {
     class CountriesTextFile
-    { 
+    {
         private const string FileLocation = @"..\..\countries.txt";
-        public static void CountryReader()
+
+        public string ReadCountriesFromFile()
         {
-            string countryName;
-            using (FileStream fileStream =
-                File.Create(FileLocation))
-            using (StreamReader reader =
-                new StreamReader(fileStream))
+            string fileContents = string.Empty;
+            if (File.Exists(FileLocation))
             {
-                countryName = reader.ReadLine();
+                using (StreamReader reader = new StreamReader(FileLocation))
+                {
+                    fileContents = reader.ReadToEnd();
+                }
             }
-            Console.WriteLine(countryName);
+            return fileContents;
         }
 
-        public static void CountryWriter()
+        public void AddCountryToFile(string countryName)
         {
-            //string writeCountryName;
-            using (FileStream fileStream =
-                File.Create(FileLocation))
-            using (StreamWriter writer =
-                new StreamWriter(fileStream))
-            {
-                writer.WriteLine();
-            }
+            File.AppendAllText(FileLocation, countryName);
         }
     }
 }
-        
+

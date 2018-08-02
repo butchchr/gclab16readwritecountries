@@ -9,18 +9,9 @@ namespace gclab16readwritenumbersfromtextfile
 {
     class Validator
     {
-        public static int? IsNumValid (string choiceFromUser)
+       public bool IsValidCountry(string country)
         {
-            if (!string.IsNullOrWhiteSpace(choiceFromUser))
-            {
-                int numFromUser;
-                bool num1 = int.TryParse(choiceFromUser, out numFromUser);
-                if (numFromUser > 0 && numFromUser < 4)
-                {
-                    return numFromUser;           
-                }
-            }
-            return null;
+            return false;
         }
     }
 }

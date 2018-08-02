@@ -26,7 +26,7 @@ namespace gclab16readwritenumbersfromtextfile
                 int? userchoice;
                 do
                 {
-                    Console.WriteLine("Welcome to the Countries Mantenance Application!\n1 - See the list of countries\n2 - Add a country\n3- Exit");
+                    Console.WriteLine("Welcome to the Countries Mantenance Application!\n1 - See the list of countries\n2 - Add a country\n3 - Exit");
                     userchoice = GetUserInput(Console.ReadLine());
                 }
                 while (!userchoice.HasValue);
@@ -41,7 +41,7 @@ namespace gclab16readwritenumbersfromtextfile
                         do
                         {
                             Console.WriteLine("Please enter a country name:");
-                            countryName = Console.ReadLine();
+                            countryName = Console.ReadLine().Trim();
                         }
                         while (validator.IsValidCountry(countryName));
 

@@ -8,51 +8,30 @@ using System.Threading.Tasks;
 namespace gclab16readwritenumbersfromtextfile
 {
     class CountriesTextFile
-    {
-        public void CountryReader()
+    { 
+        private const string FileLocation = @"..\..\countries.txt";
+        public static void CountryReader()
         {
             string countryName;
             using (FileStream fileStream =
-                File.Create(@"C:\Users\lastm\source\repos\gclab16readwritenumbersfromtextfile\gclab16readwritenumbersfromtextfile\countries.txt"))
+                File.Create(FileLocation))
             using (StreamReader reader =
                 new StreamReader(fileStream))
             {
                 countryName = reader.ReadLine();
             }
             Console.WriteLine(countryName);
-
-                //if (!File.Exists("countries.txt"))
-                //{
-                //else
-                //{
-                //    var CountryName = reader.ReadLine();
-                //    Console.WriteLine(CountryName);
-                //}
-            }
         }
 
-        public void CountryWriter()
+        public static void CountryWriter()
         {
-            using (StreamReader reader =
-                new StreamReader(@"C:\Users\lastm\source\repos\gclab16readwritenumbersfromtextfile\gclab16readwritenumbersfromtextfile"))
+            //string writeCountryName;
+            using (FileStream fileStream =
+                File.Create(FileLocation))
+            using (StreamWriter writer =
+                new StreamWriter(fileStream))
             {
-                if (!File.Exists("countries.txt"))
-                {
-                    using (StreamWriter writer =
-                        new StreamWriter("countries.txt"))
-                    {
-
-                    }
-                }
-                else
-                {
-                    using (StreamWriter writer =
-                        new StreamWriter("countries.txt"))
-                    {
-                        writer.Write("");
-                        return;
-                    }
-                }
+                writer.WriteLine();
             }
         }
     }

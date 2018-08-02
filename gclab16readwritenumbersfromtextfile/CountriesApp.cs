@@ -36,6 +36,7 @@ namespace gclab16readwritenumbersfromtextfile
                     case 1:
                         Console.WriteLine(countriesTextFile.ReadCountriesFromFile());
                         break;
+
                     case 2:
                         string countryName;
                         do
@@ -47,8 +48,10 @@ namespace gclab16readwritenumbersfromtextfile
 
                         countriesTextFile.AddCountryToFile(countryName);
                         break;
+
                     case 3:
                         Console.WriteLine("Goodbye");
+                        Console.ReadKey();
                         jedi = false;
                         break;
                 }

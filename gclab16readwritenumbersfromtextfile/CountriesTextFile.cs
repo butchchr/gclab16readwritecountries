@@ -26,7 +26,7 @@ namespace gclab16readwritenumbersfromtextfile
 
         public void AddCountryToFile(string countryName)
         {
-            File.AppendAllText(FileLocation, countryName);
+            File.AppendAllText(FileLocation, countryName + Environment.NewLine);
         }
     }
 }

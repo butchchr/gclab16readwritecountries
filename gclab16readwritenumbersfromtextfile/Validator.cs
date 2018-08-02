@@ -266,11 +266,7 @@ namespace gclab16readwritenumbersfromtextfile
         public bool IsValidCountry(string country)
         {//https://www.iso.org/iso-3166-country-codes.html ISO3166
 
-            if (isoCountryNames.Contains(country))
-            {
-                return true;
-            }
-            return false;
+            return (!isoCountryNames.Contains(country));
         }
     }
 }
